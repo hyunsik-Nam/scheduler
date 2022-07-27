@@ -7,14 +7,18 @@ import './theme.scss';
 import App from './App';
 import { Calender } from './calender';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router , Routes, Route} from "react-router-dom";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    <Calender />
-  </React.StrictMode>
+  <Router>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path='/calender' element={<Calender/>} />
+    </Routes>
+  </Router>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

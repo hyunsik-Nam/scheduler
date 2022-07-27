@@ -3,6 +3,7 @@ import { Icon } from '@iconify/react';
 import { format, addMonths, subMonths } from 'date-fns';
 import { startOfMonth, endOfMonth, startOfWeek, endOfWeek } from 'date-fns';
 import { isSameMonth, isSameDay, addDays, parse } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 const RenderHeader = ({ currentMonth, prevMonth, nextMonth }) => {
     return (
@@ -105,6 +106,7 @@ export const Calender = () => {
     };
     return (
         <div className="calendar">
+            <Link to={'/'}>메인화면 이동</Link>
             <RenderHeader
                 currentMonth={currentMonth}
                 prevMonth={prevMonth}
