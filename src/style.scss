@@ -3,6 +3,7 @@
 
 .calendar {
     @include common.size(60%, 90%);
+    margin: auto;
     .header {
         @include common.size(100%, 7%);
         @include common.flex-row(space-between, baseline);
@@ -55,6 +56,7 @@
         .row {
             @include common.size(100%, 100%);
             @include common.flex-row(space-between, center);
+            
             .col {
                 @include common.size(13.5%, 93%);
                 @include common.flex-row(flex-start, flex-start);

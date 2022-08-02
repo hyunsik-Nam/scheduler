@@ -5,23 +5,31 @@ import './style.scss';
 import './common.scss';
 import './theme.scss';
 import App from './App';
+//import Login from './Login';
 import { Calender } from './calender';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router , Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router , Routes, Route, BrowserRouter} from "react-router-dom";
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path='/calender' element={<Calender/>} />
-    </Routes>
-  </Router>
-  
+<BrowserRouter>
+<App/>
+
+</BrowserRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+{/*
+  <Router>
+  <Routes>
+    <Route path="/" element={<App />} />
+    <Route path='/calender' element={<Calender/>} />
+  </Routes>
+</Router>
+);
+
+//reportWebVitals();
+
+*/}
+

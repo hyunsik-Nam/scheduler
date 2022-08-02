@@ -1,0 +1,59 @@
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { UserAuth } from '../context/AuthContext';
+
+const Signup = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError ] = useState('');
+  const {createUser} = UserAuth();
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault() 
+    setError('');
+    try{
+      const res = await createUser(email,password);
+      console.log(res);
+
+ 
+      navigate('/')
+    }catch (e){
+      setError(e.message);
+      console.log(e.message);
+    }
+  };
+
+  console.log('signUp');
+
+  return (
+    <div className='max-w-[700px] mx-auto my-16 p-4'>
+      <div>
+        <h1 className='text-2xl fond-bold py-2'>로그인해주세요</h1>
+        <p className='py-2'>
+          이미 계정이 있습니까? 
+          <Link to='/' className='underline'>
+            로그인
+          </Link>
+        </p>
+      </div>
+      <form onSubmit = {handleSubmit}>
+        <div className='flex flex-col py-2'>
+          <label className='py-2 font-medium'>Email Address</label>
+          <input onChange = {(e) => setEmail(e.target.value)} 
+          className='border p-3' type='email' />
+        </div>
+        <div className='flex flex-col py-2'>
+          <label className='py-2 font-medium'>Password</label>
+          <input onChange = {(e)=> setPassword(e.target.value)} 
+          className='border p-3' type='Password' />
+        </div>
+        <button className='border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-4 my-2 text-white'>
+          회원가입
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default Signup
