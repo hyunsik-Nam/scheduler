@@ -1,5 +1,5 @@
 // 넓게 통용되는 것들
-@use 'src/theme.scss';
+@use 'theme.scss';
 
 @mixin size($width: 14px, $height: 14px) {
     width: $width;
